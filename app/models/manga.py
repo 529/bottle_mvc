@@ -40,7 +40,7 @@ class Manga:
     def edit(self, id):
 
         sql = "select * from manga where id = %s"
-        db.con.execute(sql, (id))
+        db.con.execute(sql, ([id]))
         return db.con.fetchone()
 
 
@@ -55,7 +55,7 @@ class Manga:
 
             if params["del"]:
                 sql = "delete from manga where id = %s"
-                db.con.execute(sql, (params["id"]))
+                db.con.execute(sql, ([params["id"]]))
             else:
                 sql = "update manga set "
                 sql += " num=%s"

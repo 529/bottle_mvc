@@ -15,8 +15,8 @@ def server_static(filepath):
 	return static_file(filepath, root='./stat/')
 
 ## bottle単品で動かしたい場合
-#from bottle import run
-#run(host='localhost', port=3000)
+from bottle import run
+run(host='localhost', port=3000)
 
 ## gunicornを使う場合
-app = default_app()
+##app = default_app()
